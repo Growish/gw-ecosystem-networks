@@ -1,7 +1,7 @@
 {
   "name": "GrowishPay ecosystem for Networks",
   "version": "1.0.0",
-  "description": "This document expose guides and the API to consume several of the payment solutions offer by GrowishPay to Networks for white label integration",
+  "description": "This page presents documentation and API to integrate GrowishPay group payment solutions for white label integration.",
   "title": "GrowishPay ecosystem for Networks",
   "header": {
     "title": "Basic concepts",

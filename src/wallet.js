@@ -35,7 +35,7 @@
  * @api{post} /b2b-wallet/:walletId/transaction New Wallet offline transaction
  * @apiName newWalletTransaction
  * @apiGroup Wallet
- * @apiDescription Associates a new offline transaction to a wallet. Use this for register cash-ins outside of GWP EPOS.
+ * @apiDescription Associates a new offline transaction to a wallet. Use this for register cash-ins outside of GWP EPOS. i.e. at client's shops
  * @apiPermission Private
  *
  * @apiParam (Transaction info) {Number} amount Amount of the transaction in eurocents

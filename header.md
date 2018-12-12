@@ -5,15 +5,24 @@
 
 ### Overview
 
-This document is intended for Networks of travel agencies, business, tour operators, software houses, or any other type of business
+This document is intended for Networks of travel agencies, business, tour operators, software houses, purchasing groups, or any other type of business
 who wants to integrate the GrowishPay payment solutions in white label through a proprietary software to their clients or partners.
 
-Let's say you are a software house that produce a CRM for several clients, and you wish to add a module to that CRM that allows your
+Let's say you are a software house that produces a CRM for several clients, and you wish to add a module to that CRM that allows your
 users to create electronic wallets so they can accept collective payments. GrowishPay gives you a RESTful API you can integrate in
 your CRM to allow them to Login to GrowishPay, create wallets, sync wallet operations to your fiscal system and other tools.
 
 &nbsp;
 
+### Definitions
+
+**Network**: community of all merchants with the same logics and rules.
+
+**Client**: merchant who wants to offer online group payments via credit card and bank withdrawal
+
+**Owner/user**: the person (customer of the client) beneficiary of the service.
+
+&nbsp;
 
 ### Preregistration
 
@@ -34,19 +43,23 @@ During developing, we add some testing clients to your account.
 
 ### Wallet bond
 
-When creating a new wallet you specify an owner and a bond among other details. The bond value is expressed in eurocents and it
-represents a contract between your agent/agency and the owner of the wallet. All cash-in operations bellow that bond value
-are immediately transfer to the agent/agency wallet. When the collected amount surpass the bond value, all new cash-ins transactions
-stay in the owner's wallet. This is useful if your agents creates wallets to collect money for a product or service, they specified
-the cost of the goods as the bond, so all the transaction bellow that, goes directly to your agent, all the exceeding amounts remain in the
-client's wallet. When creating a new wallet with bond, GrowishPay sends an email to the owner with a link to accept or decline
+When creating a new wallet you specify an owner (from now on User) and a bond among other details. The bond value is expressed in eurocents and it
+represents a contract between your client and the user of the wallet. All cash-in operations bellow that bond value
+are immediately transfer to the client's wallet. When the collected amount surpass the bond value, all new cash-ins transactions
+stay in the user's wallet. This is useful if your client creates wallets to collect money for a product or service, they specified
+the cost of the goods as the bond, so all the transaction bellow that, goes directly to your client, all the exceeding amounts remain in the
+client's wallet. When creating a new wallet with bond, GrowishPay sends an email to the user with a link to accept or decline
 the contract.
+
+&nbsp;
+
+<img src="img/image001.png" alt="UI di registrazione" height="350"/>
 
 &nbsp;
 
 ### EPOS
 
-GrowishPay provides an electronic point of sale to do cash-ins on wallets with credit card a withdrawals, for more
+GrowishPay provides an electronic point of sale to do cash-ins on wallets with credit card and withdrawals, for more
 documentation and examples; <a href="https://webpaymentsdev.growish.com" target="_blank">click here</a> (Italian only).
 
 &nbsp;
@@ -126,7 +139,7 @@ The field *message* will contain an object explaining the validation error:
  "code": 400,
  "message": {
    "email": {
-     "isEmpty":"Il dato richiesto e non può essere vuoto"
+     "isEmpty":"Il dato richiesto non può essere vuoto"
    },
    "birthday": {
      "dateInvalidDate": "Il valore non sembra essere una data valida"
@@ -194,6 +207,12 @@ If you intend to add the GrowishPay API to a WebAPP you can do it without having
 we support Cross-origin resource Sharing. While developing you must indicate your developing server domain so
 we can authorize it, if you are developing locally or on a developing server with no public access you must use
 a proxy.
+
+&nbsp;
+
+### Client integration
+
+If needed, we can provide ready-to-use javascripts widgets to display and update API information.
 
 &nbsp;
 
